@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halloween Comercial | Home Office</title>
+
+<style>
+:root {
+  --bg: #100d1b;
+  --panel: #211932;
+  --orange: #ff8a24;
+  --purple: #9b6cff;
+  --text: #fff8f0;
+  --muted: #c8bfd9;
+  --line: #49385f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 0%, #39204e, transparent 35%),
+    radial-gradient(circle at 90% 20%, #4a260f, transparent 25%),
+    var(--bg);
+}
+
+header {
+  padding: 45px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 18px 0 10px;
+}
+
+header h1 span {
+  color: var(--orange);
+}
+
+header p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.kicker {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--orange);
+  border-radius: 30px;
+  color: #ffb56d;
+  background: #ff8a2418;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #100d1bf2;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 13px;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background: var(--panel);
+  color: var(--orange);
+}
+
+main {
+  width: min(1120px, 92%);
+  margin: auto;
+  padding: 30px 0 60px;
+}
+
+.welcome {
+  background: #9b6cff18;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-top: 45px;
+  scroll-margin-top: 90px;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.folder-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 17px;
+}
+
+.folder,
+.card {
+  background: linear-gradient(145deg, #2b2041, var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+  transition: 0.2s;
+}
+
+.folder {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.folder:hover,
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+
+.folder-icon {
+  font-size: 3rem;
+}
+
+.folder h3 {
+  font-size: 1.4rem;
+  margin: 12px 0;
+}
+
+.folder p,
+.card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.94rem;
+}
+
+.folder .count {
+  color: #ffb56d;
+  font-size: 0.85rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.emoji {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.08rem;
+  margin: 0 0 8px;
+}
+
+.card p {
+  flex: 1;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--orange);
+  color: #211225;
+  font-weight: bold;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  filter: brightness(1.12);
+}
+
+.note {
+  background: #ff8a2412;
+  border: 1px solid #ff8a2455;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 20px;
+  color: #f5d9bd;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.price-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  color: #e1d3ff;
+  border: 1px solid var(--purple);
+  background: #9b6cff20;
+  font-size: 0.8rem;
+}
+
+.promo {
+  background:
+    radial-gradient(circle at top, #633b80, #211932 75%);
+  text-align: center;
+  padding: 24px 15px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.promo .speed {
+  display: block;
+  color: var(--orange);
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+footer strong {
+  color: var(--orange);
+}
+
+@media (max-width: 520px) {
+  nav a {
+    font-size: 0.82rem;
+    padding: 8px;
+  }
+
+  .card {
+    min-height: 190px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="kicker">🦇 Edición especial de octubre 🦇</div>
+  <h1>Halloween <span>Comercial</span></h1>
+  <p>
+    ¡Que no se nos escape ninguna venta! 🎃<br>
+    Herramientas, sistemas y precios del equipo Home Office.
+  </p>
+</header>
+
+<nav>
+  <a href="#carpetas">📁 Carpetas</a>
+  <a href="#herramientas">🧰 Herramientas</a>
+  <a href="#precios">💸 Precios</a>
+  <a href="#recordatorios">🕯️ Recordatorios</a>
+</nav>
+
+<main>
+
+<div class="welcome">
+  🕸️ <strong>¡Bienvenido/a al refugio comercial!</strong><br>
+  Elegí una carpeta para encontrar rápidamente los accesos de trabajo.
+  Guardá esta página en favoritos para tener todo a mano.
+</div>
+
+<!-- CARPETAS PRINCIPALES -->
+<section id="carpetas" class="section">
+  <h2>📁 Tus carpetas</h2>
+  <p class="section-intro">Todo organizado para encontrarlo rápidamente.</p>
+
+  <div class="folder-grid">
+
+    <a class="folder" href="#herramientas">
+      <div class="folder-icon">🧰</div>
+      <h3>Herramientas</h3>
+      <p>
+        Sistema VANTIX, consultas de líneas, chips, mapas,
+        correo electrónico y páginas de gestión.
+      </p>
+      <div class="count">11 accesos directos · Abrir carpeta →</div>
+    </a>
+
+    <a class="folder" href="#precios">
+      <div class="folder-icon">💸</div>
+      <h3>Precios y promociones</h3>
+      <p>
+        Precios móviles de Personal, líneas nuevas,
+        planes de fibra y precios de Claro.
+      </p>
+      <div class="count">4 accesos directos · Abrir carpeta →</div>
+    </a>
+
+  </div>
+</section>
+
+<!-- HERRAMIENTAS -->
+<section id="herramientas" class="section">
+  <h2>🧰 Carpeta de herramientas</h2>
+  <p class="section-intro">
+    Todos los enlaces comerciales en un solo lugar.
+  </p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="emoji">🗂️</div>
+      <h3>Sistema de carga VANTIX</h3>
+      <p>Ingresá al CRM para cargar y gestionar clientes.</p>
+      <a class="btn" href="https://movistari745-maker.github.io/crm-fibra/index.html" target="_blank" rel="noopener noreferrer">Abrir VANTIX ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">📱</div>
+      <h3>Numeración — ENACOM</h3>
+      <p>Consultar información de numeración telefónica.</p>
+      <a class="btn" href="https://numeracion.enacom.gob.ar/Numeracion.aspx" target="_blank" rel="noopener noreferrer">Abrir ENACOM ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">💳</div>
+      <h3>Validador de tarjeta</h3>
+      <p>Herramienta externa. No ingreses datos financieros reales de clientes.</p>
+      <a class="btn" href="https://www.vccgenerator.org/es/validador-de-tarjeta-de-credito/" target="_blank" rel="noopener noreferrer">Abrir validador ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🧾</div>
+      <h3>Winpax — Tarjeta</h3>
+      <p>Acceso al recurso de tarjetas de Winpax.</p>
+      <a class="btn" href="https://winpax.com.ar/tarjeta/" target="_blank" rel="noopener noreferrer">Abrir Winpax ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🚫</div>
+      <h3>Registro No Llame</h3>
+      <p>Consultar una línea en el Registro Nacional No Llame.</p>
+      <a class="btn" href="https://nollame.aaip.gob.ar/consultar-una-linea.html" target="_blank" rel="noopener noreferrer">Consultar línea ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🔎</div>
+      <h3>Nosis</h3>
+      <p>Acceso a la plataforma de información comercial.</p>
+      <a class="btn" href="https://www.nosis.com/es" target="_blank" rel="noopener noreferrer">Abrir Nosis ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🏦</div>
+      <h3>Situación crediticia — BCRA</h3>
+      <p>Consultar la información publicada por el Banco Central.</p>
+      <a class="btn" href="https://www.bcra.gob.ar/situacion-crediticia/" target="_blank" rel="noopener noreferrer">Consultar BCRA ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">📲</div>
+      <h3>Chip con costo</h3>
+      <p>Solicitar un nuevo chip a través de Movistar.</p>
+      <a class="btn" href="https://www.movistar.com.ar/ayuda/pedir-nuevo-chip" target="_blank" rel="noopener noreferrer">Pedir nuevo chip ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🏪</div>
+      <h3>Chip sin costo / locales</h3>
+      <p>Consultar locales Movistar y disponibilidad de chips.</p>
+      <a class="btn" href="https://www.movistar.com.ar/ayuda/locales-movistar" target="_blank" rel="noopener noreferrer">Buscar locales ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🗺️</div>
+      <h3>Mapa</h3>
+      <p>Abrir Google Maps para ubicar direcciones y recorridos.</p>
+      <a class="btn" href="https://www.google.com.ar/maps/@-32.8932293,-68.8466543,14z?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Abrir mapa ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">✉️</div>
+      <h3>Verificar correo electrónico</h3>
+      <p>Herramienta externa para comprobar direcciones de correo.</p>
+      <a class="btn" href="https://es.infobyip.com/verifyemailaccount.php" target="_blank" rel="noopener noreferrer">Verificar correo ↗</a>
+    </article>
+
+  </div>
+
+  <div class="note">
+    🔐 <strong>Importante:</strong> utilizá las herramientas respetando
+    los procedimientos de la empresa. No compartas contraseñas,
+    números completos de tarjetas, códigos de seguridad ni datos
+    personales sensibles de clientes.
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="section">
+  <h2>💸 Carpeta de precios</h2>
+  <p class="section-intro">
+    Accesos a las carpetas de precios y promociones.
+  </p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="emoji">📱</div>
+      <span class="price-tag">Móviles</span>
+      <h3>Precios móviles de Personal</h3>
+      <p>Consultá el material de precios móviles de Personal.</p>
+      <a class="btn" href="https://drive.google.com/drive/folders/1wIFMNgLizO07gjiEkJ6Q2f3d40O6paMp" target="_blank" rel="noopener noreferrer">Ver precios ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🆕</div>
+      <span class="price-tag">Altas</span>
+      <h3>Líneas nuevas</h3>
+      <p>Acceso al material compartido para líneas nuevas.</p>
+      <a class="btn" href="https://drive.google.com/drive/folders/1wIFMNgLizO07gjiEkJ6Q2f3d40O6paMp" target="_blank" rel="noopener noreferrer">Ver líneas nuevas ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🌐</div>
+      <span class="price-tag">Internet hogar</span>
+      <h3>Planes de fibra</h3>
+      <p>Consultá la carpeta de planes y precios de fibra.</p>
+      <a class="btn" href="https://drive.google.com/drive/folders/1wIFMNgLizO07gjiEkJ6Q2f3d40O6paMp" target="_blank" rel="noopener noreferrer">Ver planes de fibra ↗</a>
+    </article>
+
+    <article class="card">
+      <div class="emoji">📶</div>
+      <span class="price-tag">Comparativa</span>
+      <h3>Precios de Claro</h3>
+      <p>Acceso al material de precios de Claro.</p>
+      <a class="btn" href="https://drive.google.com/drive/folders/1wIFMNgLizO07gjiEkJ6Q2f3d40O6paMp" target="_blank" rel="noopener noreferrer">Ver precios de Claro ↗</a>
+    </article>
+
+  </div>
+
+  <div class="note">
+    📌 Los cuatro enlaces de precios apuntan a la misma carpeta de Drive,
+    porque esa es la dirección que recibí. Si tenés enlaces separados,
+    se pueden reemplazar individualmente.
+  </div>
+
+  <!-- TARJETAS VISUALES DE PLANES -->
+  <div class="section">
+    <h2>🎃 Promociones de fibra</h2>
+    <p class="section-intro">
+      Espacios visuales para consultar las velocidades.
+      Los precios deben actualizarse con las imágenes oficiales.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="promo">
+          <span>INTERNET PARA TU HOGAR</span>
+          <span class="speed">300 MEGAS</span>
+          <span>🎃 Conectate a toda velocidad</span>
+        </div>
+        <h3>Plan 300 megas</h3>
+        <p>Reemplazá este espacio por la imagen oficial del precio vigente.</p>
+      </article>
+
+      <article class="card">
+        <div class="promo">
+          <span>PROMOCIÓN ESPECIAL</span>
+          <span class="speed">600 MEGAS</span>
+          <span>👻 Más velocidad para todos</span>
+        </div>
+        <h3>Plan 600 megas</h3>
+        <p>Reemplazá este espacio por la imagen oficial del precio vigente.</p>
+      </article>
+
+      <article class="card">
+        <div class="promo">
+          <span>VELOCIDAD MÁXIMA</span>
+          <span class="speed">1 GB</span>
+          <span>🦇 Potencia para tu hogar</span>
+        </div>
+        <h3>Plan 1 GB</h3>
+        <p>Reemplazá este espacio por la imagen oficial del precio vigente.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECORDATORIOS -->
+<section id="recordatorios" class="section">
+  <h2>🕯️ Recordatorios del equipo</h2>
+  <p class="section-intro">
+    Pequeños hábitos para que las oportunidades no desaparezcan en la niebla.
+  </p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="emoji">📞</div>
+      <h3>Seguimiento</h3>
+      <p>Retomá las consultas pendientes con un mensaje amable y claro.</p>
+    </article>
+
+    <article class="card">
+      <div class="emoji">🗺️</div>
+      <h3>Verificá cobertura</h3>
+      <p>Confirmá los datos necesarios antes de avanzar con una contratación.</p>
+    </article>
+
+    <article class="card">
+      <div class="emoji">⭐</div>
+      <h3>Compartí tus logros</h3>
+      <p>Celebrá cada avance y compartí las buenas prácticas con el equipo.</p>
+    </article>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  🎃 <strong>Halloween Comercial</strong> · Equipo Home Office
+  <p>Verificá siempre que los precios y condiciones estén actualizados.</p>
+</footer>
+
+</body>
+</html>
